@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>معا ضد عبدو</title>
+
+  <style>
+    :root {
+      --bg: #f7f7f5;       /* أوف وايت */
+      --primary: #6a0dad;  /* بنفسجي */
+      --text: #222;
+      --radius: 15px;
+    }
+
+    * {
+      box-sizing: border-box;
+      font-family: "Cairo", sans-serif;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      color: var(--text);
+    }
+
+    .container {
+      max-width: 700px;
+      width: 100%;
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    h1 {
+      margin-top: 0;
+      color: var(--primary);
+      font-size: clamp(28px, 5vw, 42px);
+    }
+
+    p {
+      line-height: 1.9;
+      font-size: 16px;
+      margin: 20px 0 30px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    button {
+      padding: 14px 26px;
+      font-size: 16px;
+      border: none;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .main-btn {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .main-btn:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+    }
+
+    .escape-btn {
+      margin-top: 40px;
+      background: transparent;
+      color: var(--primary);
+      border: 2px dashed var(--primary);
+      position: relative;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 14px;
+      opacity: 0.9;
+    }
+
+    footer a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .note {
+      margin-top: 15px;
+      font-size: 12px;
+      opacity: 0.6;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>معا ضد عبدو</h1>
+
+    <p>
+      عبد الرحمن محمد محمود و المعروف بعبدو ابو الشيخ او الدحيح  
+      فشخ الخطر الاكبر علي الجنس البشري و يجب ايقاف نسله  
+      <br/>
+      عبدو هو سبب اضمحلال الامم  
+      علينا جميعا الوقوف معا ضد عبدو  
+      <br/>
+      #معا_ضد_عبدو
+    </p>
+
+    <div class="buttons">
+      <button class="main-btn" onclick="accepted()">ضد عبدو</button>
+      <button class="main-btn" onclick="accepted()">معانا</button>
+    </div>
+
+    <button class="escape-btn" id="escapeBtn">
+      ضد اللي ضد عبدو
+    </button>
+
+    <footer>
+      created by 
+      <a href="https://omar-momen.vercel.app/" target="_blank">Omar</a>
+    </footer>
+  </div>
+
+  <script>
+    function accepted() {
+      alert("انت في السليم ✅");
+    }
+
+    const escapeBtn = document.getElementById("escapeBtn");
+
+    function moveButton() {
+      const x = Math.random() * (window.innerWidth - escapeBtn.offsetWidth - 40);
+      const y = Math.random() * (window.innerHeight - escapeBtn.offsetHeight - 40);
+
+      escapeBtn.style.position = "fixed";
+      escapeBtn.style.left = x + "px";
+      escapeBtn.style.top = y + "px";
+    }
+
+    escapeBtn.addEventListener("mouseenter", moveButton);
+    escapeBtn.addEventListener("click", moveButton);
+  </script>
+
+</body>
+</html>
